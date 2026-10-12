@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ប្រព័ន្ធ Check In/Out បុគ្គលិក</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="user-info">
+        <div class="avatar" id="avatar">👤</div>
+        <div>
+          <div class="user-name" id="userName">កំពុងផ្ទុក...</div>
+          <div class="user-id" id="userId">ID: -</div>
+        </div>
+      </div>
+      <div class="clock" id="liveClock">--:--:--</div>
+    </header>
+
+    <section class="status-card" id="statusCard">
+      <div class="status-label">ស្ថានភាពបច្ចុប្បន្ន</div>
+      <div class="status-value" id="statusValue">មិនទាន់ Check In</div>
+      <div class="status-time" id="statusTime">-</div>
+    </section>
+
+    <section class="gps-card">
+      <div class="gps-row">
+        <span>📍 ទីតាំង GPS:</span>
+        <span id="gpsStatus">កំពុងរក...</span>
+      </div>
+      <div class="gps-row small">
+        <span id="gpsCoords">Lat: -, Lng: -</span>
+      </div>
+      <div class="gps-row small">
+        <span id="gpsDistance">ចម្ងាយពីការិយាល័យ: - ម៉ែត្រ</span>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button class="btn btn-checkin" id="btnCheckIn" disabled>✅ Check In</button>
+      <button class="btn btn-checkout" id="btnCheckOut" disabled>🚪 Check Out</button>
+    </section>
+
+    <section class="history">
+      <h3>📋 ប្រវត្តិថ្ងៃនេះ</h3>
+      <ul id="historyList">
+        <li class="empty">មិនមានទិន្នន័យ</li>
+      </ul>
+    </section>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <p id="loaderText">កំពុងទាញយកទីតាំង...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
